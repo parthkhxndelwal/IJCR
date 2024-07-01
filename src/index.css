@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Throughout HTML Styles */
+.root {
+  margin: 0;
+  padding: 0;
+  
+}
+body {margin: 0; font-family: 'Lora', serif;overflow-x: hidden;}
+
+/* Navbar */
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+}
+.IJCRNavLogo {
+  max-height: 2.5rem;
+  min-height: 2.5rem;
+  padding: 10px;
+}
+.NavSideSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+li {
+  margin-left:5px;
+  margin-right: 5px;
+  list-style: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+a:hover {
+  background-color: rgba(218, 218, 218, 0.205);
+  transition: 0.2s ease-in-out all;
+}
+
+/* Hero */
+.Hero {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #006769;
+  height: 30vh;
+  color: white;
+}
+.coverImage {
+  height: 30vh;
+  margin-top: -20px;
+  border-radius: 10px;
+  box-shadow: 6px 1px 15px rgba(0, 0, 0, 1.5);
+}
+.openAccess {
+  color: white;
+  transition: 0.1s ease-in-out all;
+  width: max-content;
+  margin-top: -2vh;
+  border: 1px solid white;
+}
+.openAccess:hover{
+  background-color: #024b4d6b;
+}
+.HeroSection1, .HeroSection2, .HeroSection3 {
+  margin: 20px
+}
+
+.HeroSection2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-end;
+  margin-right: 1vw;
+}
+
+.HeroSection2 h1{
+  width: 50vw;
+  font-size: 5vh;
+}
+
+/* MiniNavbar */
+.MiniNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  background-color:rgba(0, 103, 105, 0.091);
+}
+.MiniNavButton {
+  color: black;
+  padding: 7px;
+  margin-left:1vw;
+  margin-right: 1vw;
+  background-color: rgba(0, 103, 105, 0);
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+  border-radius: 10px;
+  border:none;
+  transform: scale(1.2);
+  /* border: 1px solid rgba(0, 0, 0, 0.121); */
+
+}
+.MiniNavButton:hover{
+  background-color: rgba(0, 103, 105, 0.091);
+  transition: 0.2s all ease-in-out;
+}
+.searchInput {
+  color: black;
+  padding: 10px;
+  margin-left:1vw;
+  margin-right: 1vw;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #058181ac;
+
+}
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.132);
+  background-color: #ffffff;
+  
+}
+.footer1 {
+  display: flex;
+  align-items: auto;
+  margin-left: 35vw;
+  margin-right: 35vw;
+  justify-content: space-between;
+  color: white;
+  background-color: #ffffff;
+  width: max-width;
+  padding:3px;
+}
+.footer2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #006769;
+  width: max-width;
+  padding:3px
+}
+.footer2 p {
+  font-size: 3vh;
+}
+.socialLinks, .importantLinks{
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  text-align: center;
+}
+
+/* Home Subpage */
+.Home {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+  margin-bottom: 10vh;
+  align-items: center;
+  flex-direction: column;
+}
+.AboutTheJournal, .aimAndScope {
+  background-color: white;
+  width: 70vw;
+  
+}
+.Home p{
+  color: #555555;
+}
+.bulletItem {
+  margin-left: 4vw;
+}
+.aimAndScope ul {
+  display: flex;
+  flex-direction: row;
+}
+.aimAndScope .bold {
+  font-weight: bolder;
+  color: black;
+}
+.stats {
+  border: 1px solid rgba(0, 0, 0, 0.121);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height:15vh;
+  border-radius: 10px;
+  width: 66%;
+  margin-top: 10vh  ;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.stat {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:20px;
+}
+.stat p {
+  margin-top: -10px;
+  font-size: 2.5vh;
+}
+.statButton {
+  border:1px solid #006769;
+  transition: 0.1s ease-in-out all;
+}
+.statButton:hover {
+  color: white;
+  background-color: #006769;
+  transition: 0.2s ease-in-out all;
+}
+
+.editor{
+  width:66%;
+  padding: 10px;
+  margin-top: 5vh;
+  height: 25vh;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.167);
+  background-color: #006769;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; 
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.editor a{
+  color: white;
+}
+.editor a:hover {
+  background-color: rgba(0, 0, 0, 0.155);
+}
+.divider{
+  width:0;
+  height:20vh;
+  align-self: center;
+  border:2px solid white;
+  border-radius: 20px;
+}
+.articles {
+  width: 66%;
+  padding:10px;
+}
+.NavDisplayBy {
+  margin-top: -15px;
+  margin-left: -9px;
+  margin-bottom: 3vh;
+}
+.displayByButton {
+  padding: 10px;
+  margin: 10px;
+  font-size: 3vh;
+  background-color: white;
+  border:none;
+  cursor:pointer;
+  border-radius: 10px;
+}
+.articleCard {
+  width: 17vw;
+  border: 1px solid rgba(0, 0, 0, 0.164);
+  padding: 15px;
+  border-radius: 10px;
+  cursor:pointer;
+  margin:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+.articleCard p{
+  margin-top:-10px;
+}
+.articleCard a{
+  text-decoration: underline;
+}
+.articleContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+.articleCard img{
+  max-width:16.8vw;
+  border-radius: 10px;
+}
