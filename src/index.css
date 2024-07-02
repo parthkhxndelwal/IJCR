@@ -309,3 +309,45 @@ a:hover {
   max-width:16.8vw;
   border-radius: 10px;
 }
+
+/* Editorial Team Subpage */
+.EditorialTeam {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.EditorInChief, .AssociateEditors, .ManagingEditor, .EditorialBoard{
+  width: 70vw;
+  margin-bottom: -2vh;
+  padding: 20px 50px;
+  border-radius: 10px;
+}
+
+.EditorialBoard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+.EditorialBoard h1{
+  align-self: flex-start;
+  margin-bottom:4vh;
+}
+.EditorialBoard table {
+  width: 60vw;
+  border:1px solid rgba(0, 0, 0, 0.164);
+  padding: 10px;
+  
+}
+
+.EditorialBoard td,th {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+}

@@ -5,7 +5,7 @@ export default function Publish() {
   const loadingBarRef = useRef(null);
 
   useEffect(() => {
-    loadingBarRef.current.continuousStart();
+    loadingBarRef.current.staticStart();
     setTimeout(() => {
       loadingBarRef.current.complete();
     }, 500); // Adjust the timeout as necessary to simulate loading time
