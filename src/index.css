@@ -60,6 +60,10 @@ a:hover {
   background-color: #006769;
   height: 30vh;
   color: white;
+  margin-right: 7vw;
+  margin-left: 7vw;
+  margin-bottom: 1vh;
+  border-radius: 10px;
 }
 .coverImage {
   height: 30vh;
@@ -101,7 +105,11 @@ a:hover {
   justify-content: center;
   height: 10vh;
   background-color:rgba(0, 103, 105, 0.091);
+  margin-left:7vw;
+  margin-right: 7vw;
+  border-radius: 10px;
 }
+
 .MiniNavButton {
   color: black;
   padding: 7px;
@@ -341,7 +349,7 @@ a:hover {
   margin-bottom:4vh;
 }
 .EditorialBoard table {
-  width: 60vw;
+  width: 80;
   border:1px solid rgba(0, 0, 0, 0.164);
   padding: 10px;
   
@@ -350,4 +358,48 @@ a:hover {
 .EditorialBoard td,th {
   padding: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+}
+.subPage{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#nitishaboutcontainer {
+  display: flex;
+  flex-direction: row;
+  
+}
+#nitishImage {
+  width: 17vw;
+  height: 17vw;
+  margin-left: 1vw;
+  margin-top: -6.5vh;
+  border-radius: 10px;
+  border: 2px solid #006769;
+}
+.NitishContainer {
+  width: 80vw;
+  margin-top:5vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+}
+#teamMemberRedirectButton {
+  background-color: white;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.1s ease-in-out all;
+  padding:10px;
+  border-radius: 10px;
+}
+#teamMemberRedirectButton:hover{
+  background-color: #f5f5f5;
+  transition: 0.2s ease-in-out all;
+}
+#backToPrevPage {
+  background-color: none;
 }

@@ -1,28 +1,38 @@
 import React, { useState, useRef, useEffect } from 'react';
-
+import { useLocation } from 'react-router-dom';
 import ArticlesAndIssues from './subPages/ArticlesAndIssues';
 import EditorialTeam from './subPages/EditorialTeam';
 import GuideForAuthors from './subPages/GuideForAuthors';
 import Home from './subPages/Home';
 import Publish from './subPages/Publish';
-
 import LoadingBar from 'react-top-loading-bar';
+import NitishKumarMinz from './subPages/EditorialBoardIndividual/NitishKumarMinz';
 
-export default function MainPage() {
-  const [subPage, chooseSubPage] = useState('Home')
+export default function MainPage({ initialSubPage }) {
+  const location = useLocation();
+  const [subPage, chooseSubPage] = useState(initialSubPage || 'Home');
   const loadingBarRef = useRef(null);
-  useEffect(()=>{
+
+  useEffect(() => {
+    if (location.pathname === '/nitishkumarminz') {
+      chooseSubPage('Nitish Kumar Minz');
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
     loadingBarRef.current.staticStart();
     setTimeout(() => {
       loadingBarRef.current.complete();
     }, 1);
-  }, [])
+  }, []);
+
   useEffect(() => {
     loadingBarRef.current.staticStart();  
     setTimeout(() => {
       loadingBarRef.current.complete();
     }, 1);
   }, [subPage]);
+
   const [query, setQuery] = useState('');
 
   const renderSubPage = () => {
@@ -30,17 +40,20 @@ export default function MainPage() {
       case 'Home':
         return <Home />;
       case 'Editorial Team':
-        return <EditorialTeam />;
+        return <EditorialTeam chooseSubPage={chooseSubPage} subPage={subPage} />;
       case 'Articles and Issues':
         return <ArticlesAndIssues />;
       case 'Publish':
         return <Publish />;
       case 'Guide for Authors':
         return <GuideForAuthors />;
+      case 'Nitish Kumar Minz':
+        return <NitishKumarMinz chooseSubPage={chooseSubPage} />;
       default:
         return <Home />;
     }
   };
+
   return (
     <>
       <div className="Navbar">
@@ -73,72 +86,83 @@ export default function MainPage() {
           style={{
             backgroundColor: subPage === 'Home' ? '#058181' : 'transparent',
             color: subPage === 'Home' ? 'white' : 'black',
-            padding:subPage === 'Home' ? '0.5rem 1.5rem' : '0.5rem 1rem',
+            padding: subPage === 'Home' ? '0.5rem 1.5rem' : '0.5rem 1rem',
             textAlign: 'center'
-          
           }}
-          >
+        >
           Home
         </button>
         <button 
-        className="MiniNavButton" 
-        onClick={() => chooseSubPage('Editorial Team')}
-        style={{
-          backgroundColor: subPage === 'Editorial Team' ? '#058181' : 'transparent',
-          color: subPage === 'Editorial Team' ? 'white' : 'black',
-          padding:subPage === 'Editorial Team' ? '0.5rem 1.5rem' : '0.5rem 1rem',
-          textAlign: 'center'
-        }}>
+          className="MiniNavButton" 
+          onClick={() => chooseSubPage('Editorial Team')}
+          style={{
+            backgroundColor: subPage === 'Editorial Team' ? '#058181' : 'transparent',
+            color: subPage === 'Editorial Team' ? 'white' : 'black',
+            padding: subPage === 'Editorial Team' ? '0.5rem 1.5rem' : '0.5rem 1rem',
+            textAlign: 'center'
+          }}
+        >
           Editorial Team ↗
         </button>
         <button 
-        className='MiniNavButton' 
-        onClick={() => chooseSubPage('Articles and Issues')}
-        style={{
-          backgroundColor: subPage === 'Articles and Issues' ? '#058181' : 'transparent',
-          color: subPage === 'Articles and Issues' ? 'white' : 'black',
-          padding:subPage === 'Articles and Issues' ? '0.5rem 1.5rem' : '0.5rem 1rem',
-          textAlign: 'center'
-        }}
+          className='MiniNavButton' 
+          onClick={() => chooseSubPage('Articles and Issues')}
+          style={{
+            backgroundColor: subPage === 'Articles and Issues' ? '#058181' : 'transparent',
+            color: subPage === 'Articles and Issues' ? 'white' : 'black',
+            padding: subPage === 'Articles and Issues' ? '0.5rem 1.5rem' : '0.5rem 1rem',
+            textAlign: 'center'
+          }}
         >        
           Articles & Issues
         </button>
-        <button className='MiniNavButton' onClick={() => chooseSubPage('Publish')}
+        <button 
+          className='MiniNavButton' 
+          onClick={() => chooseSubPage('Publish')}
           style={{
             backgroundColor: subPage === 'Publish' ? '#058181' : 'transparent',
             color: subPage === 'Publish' ? 'white' : 'black',
-            padding:subPage === 'Publish' ? '0.5rem 1.5rem' : '0.5rem 1rem',
+            padding: subPage === 'Publish' ? '0.5rem 1.5rem' : '0.5rem 1rem',
             textAlign: 'center'
-          }}>
+          }}
+        >
           Publish
         </button>
-        <button className='MiniNavButton' 
-        style={{
-          backgroundColor: 'transparent',
-          color: 'black'
-        }}
-        onClick={() => { window.open('https://ijcres.in/call_for_paper/Call-for-Paper-IJCR.pdf#zoom=25', '_blank') }}>
+        <button 
+          className='MiniNavButton' 
+          onClick={() => { window.open('https://ijcres.in/call_for_paper/Call-for-Paper-IJCR.pdf#zoom=25', '_blank') }}
+          style={{
+            backgroundColor: 'transparent',
+            color: 'black'
+          }}
+        >
           Submit your Article ↗
         </button>
-        <button className='MiniNavButton' 
-        style={{
-          backgroundColor: subPage === 'Guide for Authors' ? '#058181' : 'transparent',
-          color: subPage === 'Guide for Authors' ? 'white' : 'black',
-          padding:subPage === 'Guide for Authors' ? '0.5rem 1.5rem' : '0.5rem 1rem',
-          textAlign: 'center'
-        }}
-        onClick={() => chooseSubPage('Guide for Authors')} >
+        <button 
+          className='MiniNavButton' 
+          onClick={() => chooseSubPage('Guide for Authors')}
+          style={{
+            backgroundColor: subPage === 'Guide for Authors' ? '#058181' : 'transparent',
+            color: subPage === 'Guide for Authors' ? 'white' : 'black',
+            padding: subPage === 'Guide for Authors' ? '0.5rem 1.5rem' : '0.5rem 1rem',
+            textAlign: 'center'
+          }}
+        >
           Guide for Authors
         </button>
         <input className='searchInput' placeholder={'Search'} type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
-
       </div>
-      <LoadingBar color='#058181' height={5} ref={loadingBarRef} style={{
-        display: 'flex',
-        position: 'absolute',// Position at the bottom
-        top: 'unset' // Unset the top position
-      }} />
-      {renderSubPage()}
+      <LoadingBar 
+        color='#058181' 
+        height={5} 
+        ref={loadingBarRef} 
+        style={{
+          display: 'flex',
+          position: 'absolute', // Position at the bottom
+          top: 'unset' // Unset the top position
+        }} 
+      />
+      <div className="subPage">{renderSubPage()}</div>
       <div className="footer">
         <div className="footer1">
           <div className="importantLinks">
@@ -161,5 +185,5 @@ export default function MainPage() {
         </div>
       </div>
     </>
-  )
+  );
 }
